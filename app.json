@@ -1,7 +1,7 @@
 {
   "name": "NerdBot",
   "description": "",
-  "repository": "https://github.com/mattcreager/starbot",
+  "repository": "",
   "logo": "https://heroku-www-files.s3.amazonaws.com/starbot/starbot-icon.png",
   "success_url": "/",
   "env": {
