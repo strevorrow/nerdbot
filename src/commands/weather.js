@@ -14,7 +14,7 @@ const msgDefaults = {
 const handler = (payload, res) => {
 	var zipCode = payload.text.substring(8);
 	var weatherText = "";
-	var regex = new Regex(^\d{5}(?:[-\s]\d{4})?$);
+	var regex = new Regex("^\d{5}(?:[-\s]\d{4})?$");
 
 	if(regex.test(zipCode)){
 		request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
