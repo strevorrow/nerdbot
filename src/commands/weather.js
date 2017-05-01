@@ -15,7 +15,7 @@ const handler = (payload, res) => {
 	
 	https.request(
 	{
-		hose:"api.openweathermap.org"
+		host:"api.openweathermap.org",
 		path:"/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY'),
 		method: "GET",
 		headers: {
