@@ -12,8 +12,8 @@ const msgDefaults = {
 
 const handler = (payload, res) => {
 	
-	var zipCode = res.substring(8);
-	console.log(res);
+	var zipCode = payload.body.text.substring(8);
+	console.log(payload.body);
 	console.log(zipCode);
 	request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
 	  console.log('error:', error); // Print the error if one occurred 
