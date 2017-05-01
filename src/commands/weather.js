@@ -12,9 +12,9 @@ const msgDefaults = {
 
 const handler = (payload, res) => {
 	
-	request.get("http://api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY') ,function(result){
-		console.log(result);
-	});
+	request.get("http://api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY')).on('data', function(data) {
+		console.log(data) 
+	})
 	
 	let msg = _.defaults({
 	channel: payload.channel_name,
