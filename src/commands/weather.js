@@ -2,8 +2,7 @@
 
 const _ = require('lodash')
 const config = require('../config')
-var http = require('http');
-var https = require('https');
+var request = require('request');
 
 const msgDefaults = {
   response_type: 'in_channel',
@@ -13,15 +12,7 @@ const msgDefaults = {
 
 const handler = (payload, res) => {
 	
-	https.request(
-	{
-		host:"api.openweathermap.org",
-		path:"/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY'),
-		method: "GET",
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	}, function(result){
+	request("api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY') ,function(result){
 		console.log(result);
 	});
 	
