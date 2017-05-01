@@ -16,12 +16,13 @@ const handler = (payload, res) => {
 	request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
 		var weatherJson = JSON.parse(body)
 		console.log(weatherJson)
+		var weather = 'It is currently ' + (weatherJson["main"]["temp"] * (9/5) - 459.67) + ' degrees Fahrenheit';
 		let msg = _.defaults({
 			channel: payload.channel_name,
 			attachments: [{
 							title: 'N/A',
 							color: '#2FA44F',
-							text: 'It is currently ' + (weatherJson["main"]["temp"] * (9/5) - 459.67) + ' degrees Fahrenheit',
+							text: weather,
 							mrkdwn_in: ['text']
 							}]}, msgDefaults)
 		
