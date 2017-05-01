@@ -11,10 +11,11 @@ const msgDefaults = {
 }
 
 const handler = (payload, res) => {
-	
-	var zipCode = payload.body.text.substring(8);
+	console.log(payload);
 	console.log(payload.body);
+	var zipCode = payload.body.text.substring(8);
 	console.log(zipCode);
+
 	request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
 	  console.log('error:', error); // Print the error if one occurred 
 	  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
