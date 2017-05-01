@@ -10,11 +10,17 @@ const msgDefaults = {
 }
 
 const handler = (payload, res) => {
+	console.log(payload.text);
 	if(payload.text.indexOf("hi") > -1)
 	{
 		let msg = _.defaults({
 		channel: payload.channel_name,
-		attachments: {text: "Hello" }}, msgDefaults)
+		attachments: {
+						title: 'N/A',
+						color: '#2FA44F',
+						text: 'Hello.',
+						mrkdwn_in: ['text']
+						}}, msgDefaults)
 		
 		res.set('content-type', 'application/json')
 		res.status(200).json(msg)
@@ -23,8 +29,12 @@ const handler = (payload, res) => {
 	else{
 		let msg = _.defaults({
 		channel: payload.channel_name,
-		attachments: { text: "Good bye"}
-		}, msgDefaults)
+		attachments: {
+						title: 'N/A',
+						color: '#2FA44F',
+						text: 'Good bye.',
+						mrkdwn_in: ['text']
+						}}, msgDefaults)
 
 		res.set('content-type', 'application/json')
 		res.status(200).json(msg)
