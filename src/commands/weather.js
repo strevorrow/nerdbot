@@ -3,7 +3,6 @@
 const _ = require('lodash')
 const config = require('../config')
 var request = require('request');
-var Regex = require("regex");
 
 const msgDefaults = {
   response_type: 'in_channel',
