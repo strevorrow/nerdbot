@@ -12,6 +12,7 @@ const config = {
   PROXY_URI: process.env.PROXY_URI,
   WEBHOOK_URL: process.env.WEBHOOK_URL,
   STARBOT_COMMAND_TOKEN: process.env.STARBOT_COMMAND_TOKEN,
+  WEATHER_API_KEY: process.env.WEATHER_API_KEY,
   SLACK_TOKEN: process.env.SLACK_TOKEN,
   ICON_EMOJI: ':sad_pepe: '
 }
