@@ -12,15 +12,9 @@ const msgDefaults = {
 
 let attachments = [
   {
-    title: 'nerdbot will help you find the hippest repos on GitHub',
+    title: 'N/A',
     color: '#2FA44F',
-    text: '`/nerdbot repos` returns hip repos \n`/nerdbot javascript` returns hip JavaScript repos',
-    mrkdwn_in: ['text']
-  },
-  {
-    title: 'Configuring nerdbot',
-    color: '#E3E4E6',
-    text: '`/nerdbot help` ... you\'re lookin at it! \n',
+    text: '`Sorry Nerdbot currently does not have any functionality.',
     mrkdwn_in: ['text']
   }
 ]
