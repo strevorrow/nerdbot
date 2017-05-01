@@ -15,17 +15,21 @@ const handler = (payload, res) => {
 		let msg = _.defaults({
 		channel: payload.channel_name,
 		attachments: payload }, msgDefaults)
+		
+		res.set('content-type', 'application/json')
+		res.status(200).json(msg)
+		return
 	}
 	else{
-	  let msg = _.defaults({
+		let msg = _.defaults({
 		channel: payload.channel_name,
 		attachments: payload
-	  }, msgDefaults)
-	}
+		}, msgDefaults)
 
-  res.set('content-type', 'application/json')
-  res.status(200).json(msg)
-  return
+		res.set('content-type', 'application/json')
+		res.status(200).json(msg)
+		return
+	}
 }
 
 module.exports = { pattern: /response/ig, handler: handler }
