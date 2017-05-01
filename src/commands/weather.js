@@ -16,7 +16,7 @@ const handler = (payload, res) => {
 	var weatherText = "";
 	var regex = new Regex(^\d{5}(?:[-\s]\d{4})?$);
 
-	if(regex.test(zipCode){
+	if(regex.test(zipCode)){
 		request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
 			var weatherJson = JSON.parse(body)
 			weatherText = "It is currently " + (weatherJson["main"]["temp"] * (9/5) - 459.67) + " degrees Fahrenheit. " + "The dominant weather pattern is: " + weatherJson["weather"][0]["main"];
