@@ -12,7 +12,7 @@ const msgDefaults = {
 
 const handler = (payload, res) => {
 	
-	request("api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY') ,function(result){
+	request.get("http://api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY') ,function(result){
 		console.log(result);
 	});
 	
