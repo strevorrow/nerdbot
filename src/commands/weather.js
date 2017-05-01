@@ -12,7 +12,10 @@ const msgDefaults = {
 
 const handler = (payload, res) => {
 	
-	request.get("http://api.openweathermap.org/data/2.5/weather?zip=15212&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
+	var zipCode = res.substring(8);
+	console.log(res);
+	console.log(zipCode);
+	request.get("http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+"&appid=" + config('WEATHER_API_KEY'), function (error, response, body) {
 	  console.log('error:', error); // Print the error if one occurred 
 	  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
 	  console.log('body:', body); // Print the HTML for the Google homepage. 
