@@ -17,7 +17,7 @@ bot.message((msg) => {
 
   slack.chat.postMessage({
     token: config('SLACK_TOKEN'),
-    icon_emoji: ,
+    icon_emoji: config('ICON_EMOJI'),
     channel: msg.channel,
     username: 'Nerdbot',
     text: `Hello!`
