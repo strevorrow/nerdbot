@@ -14,7 +14,7 @@ const handler = (payload, res) => {
 	{
 		let msg = _.defaults({
 		channel: payload.channel_name,
-		attachments: payload }, msgDefaults)
+		attachments: text: "Hello" }, msgDefaults)
 		
 		res.set('content-type', 'application/json')
 		res.status(200).json(msg)
@@ -23,7 +23,7 @@ const handler = (payload, res) => {
 	else{
 		let msg = _.defaults({
 		channel: payload.channel_name,
-		attachments: payload
+		attachments: { text: "Good bye"}
 		}, msgDefaults)
 
 		res.set('content-type', 'application/json')
