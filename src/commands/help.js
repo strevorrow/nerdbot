@@ -6,21 +6,21 @@ const config = require('../config')
 
 const msgDefaults = {
   response_type: 'in_channel',
-  username: 'Starbot',
+  username: 'Nerdbot',
   icon_emoji: config('ICON_EMOJI')
 }
 
 let attachments = [
   {
-    title: 'Starbot will help you find the hippest repos on GitHub',
+    title: 'nerdbot will help you find the hippest repos on GitHub',
     color: '#2FA44F',
-    text: '`/starbot repos` returns hip repos \n`/starbot javascript` returns hip JavaScript repos',
+    text: '`/nerdbot repos` returns hip repos \n`/nerdbot javascript` returns hip JavaScript repos',
     mrkdwn_in: ['text']
   },
   {
-    title: 'Configuring Starbot',
+    title: 'Configuring nerdbot',
     color: '#E3E4E6',
-    text: '`/starbot help` ... you\'re lookin at it! \n',
+    text: '`/nerdbot help` ... you\'re lookin at it! \n',
     mrkdwn_in: ['text']
   }
 ]
