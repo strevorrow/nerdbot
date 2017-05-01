@@ -16,6 +16,10 @@
       "description": "Slack bot RTM API token",
       "required": false
     },
+	"WEATHER_API_KEY" : {
+	  "description" : "key for weather api",
+	  "required" : false
+	},
     "NODE_ENV": "staging"
   },
   "image": "heroku/nodejs"
